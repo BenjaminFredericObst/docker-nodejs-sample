@@ -1,48 +1,39 @@
-# **Thema:** Erstellen einer ToDo-Applikation mit Markdown, Git, GitHub und Docker
+# ToDo-Applikation mit Markdown, Git, GitHub und Docker :whale: 📦
+## Installation des Projekts
+:link:Link: [GitHub Repository](https://github.com/BenjaminFredericObst/docker-nodejs-sample)
 
-In dieser Abschlussaufgabe werden alle erlernten Fähigkeiten in den Bereichen **Markdown**, **Git**, **GitHub** und **Docker** kombiniert. Die Aufgabe besteht darin, eine ToDo-Applikation zu erstellen und diese in einem Docker-Container bereitzustellen.
+### Klonen des Repositories :desktop_computer: :inbox_tray:
 
-### **Aufgabenstellung:**
+Mit dem Befehl `git clone https://github.com/ICT-BLJ/docker-nodejs-sample.git` kann man das Repository klonen.
 
-1. **GitHub-Fork erstellen:**
-   - Erstelle einen **Fork** des folgenden GitHub-Repositories: [docker-nodejs-sample](https://github.com/ICT-BLJ/docker-nodejs-sample).
-   - Clone deinen Fork lokal auf deinen Computer.
+### Installation der notwendigen Pakete 📦
 
-2. **Erstellen einer README-Datei in Markdown:**
-   - Erstelle eine **README.md** Datei im Root-Verzeichnis des Projekts.
-   - Die README soll alle Schritte zur **Installation des Projekts** enthalten. Dazu gehören:
-     - Klonen des Repositories
-     - Installation der notwendigen Pakete
-     - Docker-Konfiguration und -Installation
-     - Starten der Applikation in einem Docker-Container
-   - Nutze [Markdown](https://www.markdownguide.org/cheat-sheet/) für die Struktur und Formatierung der Datei.
+Mit dem Befehl `docker init` werden diese Dateien installiert:
+- `dockerignore`
+- `Dockerfile`
+- `compose.yaml`
+- `README.Docker.md`
 
-3. **Dokumentation der Vorgehensweise:**
-   - Verfasse eine vollständige **Dokumentation in Word**, in der die Arbeitsschritte beschrieben werden. Diese Schritte sind:
-     - Klonen des Repositories
-     - Einrichtung der Entwicklungsumgebung
-     - Erstellung der README.md
-     - Verwendung von Git (Commit, Push)
-     - Erstellung und Nutzung von Docker-Containern
-   - Verwende die während des Office-Kurses erarbeiteten Kenntnisse für das Erstellen dieses Dokuments.
+Ausserdem werden mit dem Befehl auch diese wichtigen Pakete installiert, die wichtig für den Betrieb der Applikation sind:
+- `express`
+- `pg`
+- `sqlite3`
+- `uuid`
+- `wait-port`
 
-4. **Dockerize das Node.js-Projekt:**
-   - Verfolge die Anleitung unter [docs.docker.com](https://docs.docker.com/guides/language/nodejs/containerize/) ab dem Schritt **"Initialize Docker inits"**.
-   - Dein Ziel ist es, das Projekt in einem Docker-Container lauffähig zu machen, sodass am Ende eine **ToDo-Applikation** in einem Docker-Container bereitsteht.
+Wichtig fürs entwickeln im Docker-Container sind diese Pakete:
+- `jest`
+- `nodemon`
+- `prettier`
+<sub><sup>Credits: ChatGPT</sup></sub>
 
-5. **Git-Workflows:**
-   - Arbeite mit **Git**, um Änderungen regelmäßig zu committen und auf GitHub zu pushen.
-   - Verwende sinnvolle Commit-Nachrichten, um deinen Fortschritt zu dokumentieren.
-   - Stelle sicher, dass dein finaler Stand auf GitHub vorhanden ist.
+### Docker-Konfiguration und -Installation :gear: :hammer_and_wrench:
 
-6. **Abgabe:**
-   - **Dokumentation:** Lade die erstellte Word-Dokumentation (inkl. Screenshots und Beschreibung der Schritte) in dein Repository hoch.
-   - **GitHub-Link:** Stelle den Link zu deinem GitHub-Repository bereit, das den finalen Stand des Projekts enthält.
+Vor dem Starten muss der Docker-Container noch konfiguriert werden, dass kann man ebenfalls mit diesem Befehl `docker init`.
+![Bild von den Einstellungen](./img/konfiguration_Docker-Container.png)
+Einstellungen für den Docker-Container. Mit dem Befehl `docker compose up --build` startet man den Build und die Applikation. 
 
-### **Ziele der Aufgabe:**
-- Anwendung und Vertiefung von Git und GitHub.
-- Verfassen einer strukturierten Anleitung mit Markdown.
-- Containerisieren einer Node.js-Anwendung mit Docker.
-- Dokumentation des gesamten Prozesses in einem Word-Dokument.
-  
-Viel Erfolg bei der Umsetzung!
+### Starten der Applikation in einem Docker-Container :rocket:
+Mit dem Befehl `docker compose up` startet man die Applikation im Docker-Container und mit dem Befehl `docker compose down` beendet man beides. Um die gestartete Applikation zu bewundern(wenn man alles so eingestellt hat wie oben und wenn es auf der lokalen Maschine läuft), muss man mit dem Browser auf den [Localhost](http://localhost:3000/) zugreifen. 
+Wenn man alles richtig gemacht hat, sieht das so aus:
+<img src="./img/todo-list_running_cut.png" alt="ToDo-Liste am Laufen :runner:" width="750"/>
